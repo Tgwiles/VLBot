@@ -30,7 +30,7 @@ router.post('/webhook/', function (req, res) {
       userNamePromise = fb.getUserName(sender);
 
       userNamePromise.then(function(userName) {
-        fb.sendTextMessage(sender, "Thanks for opting in to Beavr Bot, " + userName.first_name + "! Type any message to have it mindlessly echoed back at you, or type 'Generic' (without the quotes) to see something awesome.");
+        fb.sendTextMessage(sender, "Hello, and thank you for using VLBot, " + userName.first_name + "! Type any message to have it mindlessly echoed back at you, or type 'Generic' (without the quotes) to see something awesome.");
       });
     }
 
@@ -45,7 +45,7 @@ router.post('/webhook/', function (req, res) {
       }
 
       // Echo the text the user sent.
-      fb.sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200));
+      fb.sendTextMessage(sender, "You just said: " + text.substring(0, 200));
     }
 
     // Handle receipt of a postback
